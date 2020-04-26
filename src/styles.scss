@@ -1,3 +1,7 @@
+$color-primary: #03A69E;
+$color-white: #fff;
+$color-grey: #eee;
+
 *,
 *::after,
 *::before {
@@ -12,11 +16,52 @@ html {
 
 body {
   font-size: 1.6rem;
-  line-height: 1.4;
+  line-height: 1.2;
 }
 
 .app {
   font-family: sans-serif;
-  text-align: center;
+  // text-align: center;
   height: 100vh;
+}
+
+#quote-box {
+  background-image: url('https://firebasestorage.googleapis.com/v0/b/random-quote-machine-7b8c5.appspot.com/o/random-bg.jpg?alt=media&token=48266f4f-c08b-40bb-b1b6-d97c3f34531e');
+  padding: 8rem 4rem 4rem;
+}
+
+.quote {
+  font-size: 8rem;
+  // max-height: 50rem;
+  border-bottom: 2px solid $color-primary;
+  margin-bottom: 3.2rem;
+  padding-bottom: 2rem;
+}
+
+.quote-info-and-actions {
+  display: flex;
+  justify-content: space-between;
+
+  .new-quote-cta-box {
+    #new-quote {
+      background-color: $color-primary;
+      color: $color-white;
+      font-size: 1.4rem;
+      padding: 1.2rem 3.2rem;
+      border: none;
+      box-shadow: 0 6px 20px -10px rgba(0,0,0,.8);
+    }
+
+    #tweet-quote {
+      text-decoration: none;
+      color: $color-primary;
+      padding: 1.2rem 1.2rem;
+      margin-left: 1.2rem;
+      transition: all .2s;
+
+      &:hover {
+        background-color: $color-grey;
+      }
+    }
+  }
 }
