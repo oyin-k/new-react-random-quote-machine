@@ -11,6 +11,10 @@ const QuoteBox = () => {
     <div className="app" id="quote-box">
       <div className="quote">
         <p id="text">{quote}</p>
+        <img
+          src="https://firebasestorage.googleapis.com/v0/b/random-quote-machine-7b8c5.appspot.com/o/quote.svg?alt=media&token=c07165c9-5317-4d7e-9549-77136e197032"
+          alt="quote-icon"
+        />
       </div>
       <div className="quote-info-and-actions">
         <div className="new-quote-cta-box">
