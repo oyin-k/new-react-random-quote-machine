@@ -2,11 +2,11 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./styles.scss";
 
+const api_url = "https://api.quotable.io/random";
+
 const QuoteBox = () => {
   const [quote, setQuote] = useState("...Ops, something went wrong");
   const [author, setAuthor] = useState("something haappened");
-
-  const api_url = "https://api.quotable.io/random";
 
   async function fetchData() {
     const res = await axios.get(`${api_url}`);
