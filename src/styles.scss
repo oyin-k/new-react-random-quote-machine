@@ -2,8 +2,6 @@ $color-primary: #03A69E;
 $color-white: #fff;
 $color-grey: #e7efee;
 
-@import url('https://fonts.googleapis.com/css2?family=Merienda+One&display=swap');
-
 *,
 *::after,
 *::before {
@@ -14,7 +12,7 @@ $color-grey: #e7efee;
 
 html {
   font-size: 62.5%;
-  font-family: 'Merienda One', cursive;
+  font-family: Merienda One, cursive;
 }
 
 body {
@@ -25,18 +23,16 @@ body {
 }
 
 #quote-box {
-  font-family: sans-serif;
-  // text-align: center;
   padding: 8rem 4rem 4rem;
   height: calc(100vh - 20%);
 }
 
 .quote {
   font-size: 8rem;
-  // max-height: 50rem;
+  min-height: 36rem;
   border-bottom: 2px solid $color-primary;
-  margin-bottom: 3.2rem;
-  padding-bottom: 2rem;
+  margin-bottom: 4.2rem;
+  padding-bottom: 5rem;
   position: relative;
 
   img {

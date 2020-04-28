@@ -1,11 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import "./styles.scss";
 
 const QuoteBox = () => {
-  const [quote, setQuote] = useState(
-    "Whatever the mind of man can conceive and believe, it can achieve."
-  );
-  const [author, setAuthor] = useState("Napoleon Hill");
+  const [quote, setQuote] = useState("...Ops, something went wrong");
+  const [author, setAuthor] = useState("something haappened");
+
+  const api_url = "https://api.quotable.io/random";
+
+  async function fetchData() {
+    const res = await axios.get(`${api_url}`);
+    const data = res.data;
+    setQuote(data.content);
+    setAuthor(data.author);
+  }
+
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   return (
     <div className="app" id="quote-box">
@@ -18,7 +30,9 @@ const QuoteBox = () => {
       </div>
       <div className="quote-info-and-actions">
         <div className="new-quote-cta-box">
-          <button id="new-quote">Get new quote</button>
+          <button id="new-quote" onClick={() => fetchData()}>
+            Get new quote
+          </button>
           <a href="https://twitter.com/intent/tweet" id="tweet-quote">
             Tweet this quote
           </a>
