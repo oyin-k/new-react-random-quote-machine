@@ -33,7 +33,12 @@ const QuoteBox = () => {
           <button id="new-quote" onClick={() => fetchData()}>
             Get new quote
           </button>
-          <a href="https://twitter.com/intent/tweet" id="tweet-quote">
+          <a
+            href={`https://twitter.com/intent/tweet?text= ${encodeURIComponent(
+              quote
+            )}`}
+            id="tweet-quote"
+          >
             Tweet this quote
           </a>
         </div>
